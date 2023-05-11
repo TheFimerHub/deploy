@@ -33,7 +33,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          source: "tfp2/docker-compose.yaml,deploy/docker_config.py"
+          source: "tfp2/docker-compose.yaml,deploy/flask_app_ci/docker_config.py"
           target: "flask_app_ci"
           strip_components: 1
       - name: tfp2 app
