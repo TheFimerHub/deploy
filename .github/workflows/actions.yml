@@ -28,7 +28,7 @@ jobs:
           cat docker-compose-ci.yaml | envsubst > deploy/docker-compose.yaml
           cat docker_ci_config.py | envsubst > deploy/docker_config.py
       - name: copy files to server
-        uses: appleboy/scp-action@master
+        uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
@@ -46,4 +46,3 @@ jobs:
             cd flask_app_ci
             echo ${{ secrets.PASSWORD }} | sudo -S docker-compose up -d
             
-
