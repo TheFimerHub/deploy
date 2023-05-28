@@ -10,6 +10,7 @@ app.config.from_envvar("APP_SETTINGS", silent=True)
 
 db = SQLAlchemy(app)
 
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(128), unique=True)
@@ -29,6 +30,7 @@ def index():
         "new_feature": "test"
     }
     return jsonify(response)
+
 
 if __name__ == '__main__':
     app.run()
